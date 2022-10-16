@@ -103,6 +103,7 @@ Zcash::Entry zcashDP;
 Zilliqa::Entry zilliqaDP;
 Nervos::Entry NervosDP;
 Everscale::Entry EverscaleDP;
+Kusama::Entry WestendDP;
 // end_of_coin_dipatcher_declarations_marker_do_not_modify
 
 CoinEntry* coinDispatcher(TWCoinType coinType) {
@@ -152,6 +153,7 @@ CoinEntry* coinDispatcher(TWCoinType coinType) {
         case TWBlockchainKusama: entry = &kusamaDP; break;
         case TWBlockchainNervos: entry = &NervosDP; break;
         case TWBlockchainEverscale: entry = &EverscaleDP; break;
+        case TWBlockchainWestend: entry = &WestendDP; break;
         case TWBlockchainAptos: entry = &AptosDP; break;
         // end_of_coin_dipatcher_switch_marker_do_not_modify
 

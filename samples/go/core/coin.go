@@ -15,12 +15,20 @@ const (
 	CoinTypeBinance  CoinType = C.TWCoinTypeBinance
 	CoinTypeEthereum CoinType = C.TWCoinTypeEthereum
 	CoinTypeTron     CoinType = C.TWCoinTypeTron
+	CoinTypePolkadot CoinType = C.TWCoinTypePolkadot
+	CoinTypeWestend  CoinType = C.TWCoinTypeWestend
 )
 
 func (c CoinType) GetName() string {
 	name := C.TWCoinTypeConfigurationGetName(C.enum_TWCoinType(c))
 	defer C.TWStringDelete(name)
 	return types.TWStringGoString(name)
+}
+
+func (c CoinType) GetSymbol() string {
+	symbol := C.TWCoinTypeConfigurationGetSymbol(C.enum_TWCoinType(c))
+	defer C.TWStringDelete(symbol)
+	return types.TWStringGoString(symbol)
 }
 
 func (c CoinType) Decimals() int {
